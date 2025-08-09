@@ -1,33 +1,44 @@
 # webTesting
 
-This repository demonstrates simple Selenium and Playwright scripts that log into Google
-using a username and password, perform a search, and store session data so
-subsequent runs skip the login step.
+Selenium and Playwright examples for logging into Google, Facebook, and Instagram, performing basic actions (e.g., search), and reusing sessions via cookies/storage state.
 
 ## Setup
-
-Create a virtual environment and install dependencies:
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-playwright install  # downloads browsers for Playwright
+playwright install  # install browsers for Playwright
 ```
 
-Set environment variables with your credentials:
+## Environment variables
+
+- Google (Selenium/Playwright):
+	- GOOGLE_USER, GOOGLE_PASS, optional GOOGLE_SEARCH
+- Facebook (Selenium):
+	- FB_USER, FB_PASS, optional FB_SEARCH, optional FB_HEADLESS=1
+- Instagram:
+	- IG_USER, IG_PASS, optional IG_HEADLESS=1
+
+Use test accounts; 2FA or challenges can block automation.
+
+## Run
 
 ```bash
-export GOOGLE_USER="you@example.com"
-export GOOGLE_PASS="your_password"
+# Google
+python selenium_google.py
+python playwright_google.py
+
+# Facebook
+python selenium_facebook.py
+
+# Instagram
+python selenium_instagram.py
+python playwright_instagram.py
 ```
 
-Use a test account without 2FA. Google may block automated logins.
+## Session files
 
-## Running the scripts
+- Selenium: `selenium_cookies.pkl` (Google), `fb_cookies.pkl` (Facebook), `ig_cookies.pkl` (Instagram)
+- Playwright: `playwright_state.json` (Google), `playwright_ig_state.json` (Instagram)
 
-- **Selenium**: `python selenium_google.py`
-- **Playwright**: `python playwright_google.py`
-
-Each script saves authentication state (`selenium_cookies.pkl` or
-`playwright_state.json`) so later executions can reuse the session.
