@@ -1,2 +1,2 @@
-selenium
-playwright
+selenium>=4.8.0  # Updated Selenium version requirement for compatibility
+playwright>=1.32.0  # Updated Playwright

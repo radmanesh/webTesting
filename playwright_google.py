@@ -3,9 +3,9 @@ import asyncio
 from pathlib import Path
 from playwright.async_api import async_playwright
 
-EMAIL = os.getenv("GOOGLE_USER")
-PASSWORD = os.getenv("GOOGLE_PASS")
-STATE_FILE = Path("playwright_state.json")
+EMAIL = os.getenv("GOOGLE_USER") or ""  # Google account email from environment variable, always a string
+PASSWORD = os.getenv("GOOGLE_PASS") or ""  # Google account password from environment variable, always a string
+STATE_FILE = Path("playwright_state.json")  # Path to Playwright state file
 
 async def login_and_search():
     async with async_playwright() as pw:
