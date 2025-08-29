@@ -1,2 +1,5 @@
 selenium>=4.8.0  # Updated Selenium version requirement for compatibility
-playwright>=1.32.0  # Updated Playwright
+selenium>=4.8.0  # Updated Selenium version requirement for compatibility
+playwright>=1.32.0  # Updated Playwright version requirement to include latest features
+pytest>=7.0.0  # Python testing framework for test automation
+pytest-asyncio>=0.21.0  # Async test support for Playwright tests

@@ -35,6 +35,9 @@ python selenium_facebook.py
 # Instagram
 python selenium_instagram.py
 python playwright_instagram.py
+
+# Responsive testing (Amazon)
+python playwright_responsive.py
 ```
 
 ## Session files
