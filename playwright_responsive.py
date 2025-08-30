@@ -15,7 +15,7 @@ from urllib.parse import urlparse  # URL parsing utilities for clean filenames
 from playwright.async_api import async_playwright  # Async Playwright API
 
 # ----------------------------- Configuration ---------------------------------
-TARGET_URL = "https://armanradmanesh.com"  # Target website URL for testing
+TARGET_URL = "https://www.airbnb.com"  # Target website URL for testing
 VIEWPORT_WIDTH = 480  # Target viewport width in pixels
 VIEWPORT_HEIGHT = 800  # Viewport height in pixels for mobile simulation
 OUTPUT_DIR = Path("out")  # Directory for storing screenshots
