@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KeyChain Product</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+  }
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+  header h1 {
+    flex: 1 0 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 0 1rem;
+  }
+  .nav-left, .nav-right {
+    flex: 1;
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+  .nav-left button, .nav-right button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #333;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .hero {
+    text-align: center;
+    padding: 1rem;
+  }
+  .hero img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+  .hero h2 {
+    margin-top: 1rem;
+  }
+  section {
+    padding: 1rem;
+  }
+  .btn-primary {
+    padding: 0.7rem 1.2rem;
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    margin: 1rem 0;
+  }
+  .features, .testimonials, .team, .footer {
+    margin-top: 2rem;
+  }
+  .features ul, .team ul {
+    list-style: none;
+    padding: 0;
+  }
+  .features li, .testimonials li, .team li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  .features li::before, .testimonials li::before, .team li::before {
+    content: "•";
+    color: #333;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+  .testimonials p, .team p {
+    margin: 0;
+  }
+  footer {
+    background: #f2f2f2;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  @media (min-width: 768px) {
+    header {
+      flex-wrap: nowrap;
+    }
+    header h1 {
+      flex: none;
+      text-align: left;
+      margin: 0;
+    }
+    .nav-left, .nav-right {
+      flex: none;
+      text-align: right;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+    }
+    .hero img {
+      width: 45%;
+    }
+    .hero-content {
+      width: 50%;
+      padding-left: 2rem;
+    }
+    .features ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .features li {
+      flex: 1 1 calc(50% - 1rem);
+    }
+  }
+  @media (min-width: 1024px) {
+    header {
+      padding: 1rem 3rem;
+    }
+    .hero img {
+      width: 40%;
+    }
+    .hero-content {
+      width: 55%;
+    }
+    .features ul {
+      flex-wrap: nowrap;
+    }
+    .features li {
+      flex: 1;
+    }
+    .team ul {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .team li {
+      flex: 1 1 calc(25% - 1rem);
+      margin-bottom: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>KeyChain Product</h1>
+  <div class="nav-left"><button>Shop</button></div>
+  <div class="nav-right"><button>Cart</button></div>
+</header>
+
+<section class="hero">
+  <img src="rick.jpg" alt="KeyChain Image">
+  <div class="hero-content">
+    <h2>Stylish, Durable, and Functional</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in sapien vitae libero imperdiet feugiat.</p>
+    <a href="#" class="btn-primary">Buy Now</a>
+  </div>
+</section>
+
+<section class="features">
+  <h3>Key Features</h3>
+  <ul>
+    <li><p>Compact and lightweight design</p></li>
+    <li><p>Made from premium stainless steel</p></li>
+    <li><p>Available in multiple colors</p></li>
+    <li><p>Perfect gift for everyday use</p></li>
+  </ul>
+</section>
+
+<section class="testimonials">
+  <h3>Customer Reviews</h3>
+  <ul>
+    <li><p>"Absolutely love the design!"</p></li>
+    <li><p>"Very durable and great quality."</p></li>
+    <li><p>"Gifted one to my friend, they loved it."</p></li>
+  </ul>
+</section>
+
+<section class="team">
+  <h3>Meet Our Team</h3>
+  <ul>
+    <li><p>Sarah – Designer</p></li>
+    <li><p>John – Engineer</p></li>
+    <li><p>Emily – Marketing</p></li>
+    <li><p>Alex – Support</p></li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2024 KeyChain Co. All rights reserved.</p>
+  <p>Contact: lorem@keychain.com</p>
+</footer>
+
+</body>
+</html>
