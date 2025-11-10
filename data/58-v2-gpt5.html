@@ -1,0 +1,179 @@
+
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Keychain Product</title> <style> body { margin: 0; font-family: Arial, sans-serif; color: #333; line-height: 1.5; }
+header, section {
+padding: 1rem;
+}
+
+header {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+gap: 0.5rem;
+border-bottom: 2px solid #000;
+}
+
+header input {
+flex: 1 1 60%;
+padding: 0.5rem;
+font-size: 1rem;
+}
+
+header button {
+flex: 0 0 auto;
+padding: 0.5rem 1rem;
+background-color: #333;
+color: #fff;
+border: none;
+cursor: pointer;
+}
+
+.hero {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 1rem;
+}
+
+.hero img {
+width: 100%;
+max-width: 600px;
+height: auto;
+}
+
+.hero p {
+max-width: 600px;
+}
+
+.hero .cta {
+padding: 0.75rem 1.5rem;
+background-color: #333;
+color: #fff;
+border: none;
+cursor: pointer;
+font-size: 1rem;
+}
+
+.features {
+margin-top: 2rem;
+}
+
+.features h2 {
+border-bottom: 2px solid #000;
+padding-bottom: 0.25rem;
+margin-bottom: 1rem;
+}
+
+.features ul {
+list-style: disc;
+padding-left: 1.5rem;
+}
+
+.features ul li {
+margin-bottom: 0.5rem;
+}
+
+.reviews {
+margin-top: 2rem;
+}
+
+.reviews h2 {
+border-bottom: 2px solid #000;
+padding-bottom: 0.25rem;
+margin-bottom: 1rem;
+}
+
+.review {
+margin-bottom: 1rem;
+display: flex;
+gap: 0.75rem;
+}
+
+.review img {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+}
+
+.footer {
+margin-top: 2rem;
+border-top: 2px solid #000;
+padding-top: 1rem;
+}
+
+.footer p {
+margin-bottom: 0.5rem;
+}
+
+/* Tablet layout */
+@media (min-width: 768px) and (max-width: 1279px) {
+header {
+justify-content: space-between;
+padding: 1.5rem 2rem;
+}
+
+.hero {
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: left;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.hero img {
+  width: 50%;
+}
+
+.hero p {
+  flex: 1;
+}
+
+.features, .reviews, .footer {
+  padding: 0 2rem;
+}
+}
+
+/* Desktop layout */
+@media (min-width: 1280px) {
+header {
+justify-content: flex-end;
+padding: 1.5rem 3rem;
+gap: 1rem;
+}
+
+.hero {
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+  text-align: left;
+  padding: 3rem;
+}
+
+.hero img {
+  width: 40%;
+  max-width: 500px;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.features, .reviews, .footer {
+  padding: 0 4rem;
+}
+
+.features-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.features-section {
+  flex: 1;
+}
+}
+</style>
+
+</head> <body> <header> <input type="text" placeholder="Search Keychains..."> <button>Search</button> </header> <section class="hero"> <img src="rick.jpg" alt="Keychain Product Image"> <div class="hero-text"> <h1>Premium Custom Keychains</h1> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat, mauris eu sollicitudin suscipit, purus ipsum consectetur orci, quis vehicula eros quam in urna.</p> <button class="cta">Buy Now</button> </div> </section> <section class="features"> <h2>Features</h2> <div class="features-grid"> <div class="features-section"> <ul> <li>High-quality metal material</li> <li>Custom engraving options</li> <li>Durable and lightweight</li> <li>Perfect for gifts and souvenirs</li> </ul> </div> <div class="features-section"> <ul> <li>Multiple color choices</li> <li>Fast shipping available</li> <li>Eco-friendly packaging</li> <li>Made with care and precision</li> </ul> </div> <div class="features-section"> <ul> <li>100% satisfaction guaranteed</li> </ul> </div> </div> </section> <section class="reviews"> <h2>Customer Reviews</h2> <div class="review"> <img src="rick.jpg" alt="Reviewer"> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod felis vel posuere dictum.</p> </div> <div class="review"> <img src="rick.jpg" alt="Reviewer"> <p>Great quality and fast shipping. Definitely recommended!</p> </div> <div class="review"> <img src="rick.jpg" alt="Reviewer"> <p>Perfect gift for friends and family. Will order again!</p> </div> </section> <footer class="footer"> <p><strong>About Us:</strong> We design and craft personalized accessories for everyday use. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> <p><strong>Contact:</strong> info@keychainco.com</p> <p>&copy; 2024 Keychain Co. All rights reserved.</p> </footer> </body> </html> 
