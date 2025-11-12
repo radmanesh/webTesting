@@ -13,6 +13,7 @@ Arguments:
 """
 import argparse  # Command-line argument parsing
 import asyncio  # Async event loop for Playwright operations
+import concurrent.futures  # Thread pool for running sync code in async context
 import re  # Regular expressions for parsing CSS values
 import tempfile  # Temporary file and directory creation with automatic cleanup
 from pathlib import Path  # Path utilities for file operations
@@ -23,11 +24,13 @@ from bs4 import BeautifulSoup  # HTML parsing library
 from playwright.async_api import async_playwright, Page  # Async Playwright API
 from PIL import Image  # Image processing library
 import numpy as np  # Numerical operations for image comparison
+from layout_similarity import layout_similarity # Layout similarity function
 
 # ----------------------------- Configuration ---------------------------------
 DATA_DIR = Path("data")  # Directory containing test HTML files and ground truth images
 OUTPUT_DIR = Path("out")  # Directory for generated screenshots and reports
 SOURCE_HTML = "58-v2-gpt5.html"  # Source HTML file to test
+GROUND_TRUTH_HTML = "58.html"  # Ground truth HTML file for comparison
 
 # Viewport configurations for responsive testing
 VIEWPORTS = {
@@ -1107,6 +1110,26 @@ async def run_complete_test(html_file: Optional[str] = None):
         # 4. Compare screenshots with ground truth
         print(f"\n4. Comparing screenshots with ground truth...")  # Section header
         comparisons = await compare_screenshots_with_ground_truth(screenshots, ground_truth)  # Run comparisons
+
+        # 5. Layout Similarity Summary
+        print(f"\n5. Calculating layout similarity with ground truth...")  # Section header
+
+        # Run layout_similarity in a separate thread to avoid async/sync conflict
+        loop = asyncio.get_event_loop()  # Get current event loop
+        input_list = [[str(html_path)], str(DATA_DIR / GROUND_TRUTH_HTML)]  # Prepare input paths
+
+        # Execute layout_similarity in thread pool to avoid Playwright sync/async conflict
+        with concurrent.futures.ThreadPoolExecutor() as executor:  # Create thread pool executor
+            future = loop.run_in_executor(
+                executor,
+                layout_similarity,
+                input_list
+            )  # Submit layout_similarity to thread pool
+            final_layout_scores, layout_multi_scores = await future  # Wait for completion
+
+        print(f"Final Layout Similarity Score (LSS) between {html_path.name} and ground truth: {final_layout_scores[0]:.4f}")  # Show LSS
+        print(f"Layout score size: {len(layout_multi_scores)}, final score size: {len(final_layout_scores)}")  # Show counts
+        print(f"Layout multi-scale scores: {layout_multi_scores[0]}")  # Show per-viewport LSS
 
         # Summary
         print("\n" + "=" * 70)  # Footer separator
